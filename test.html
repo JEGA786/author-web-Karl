@@ -3,304 +3,150 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sticky Navbar with Scroll Effect</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Font Awesome for social media icons -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/fonts/STONEHARBOUR-Italic.otf">
+  <title>Responsive Swiper Slider</title>
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
   <style>
-    /* Custom Styles */
-    @font-face {
-      font-family:primary-font;
-      src: url(/fonts/STONEHARBOUR-Italic.otf);
-    }
-    @font-face {
-      font-family:SECONDARY-font;
-      src: url(/fonts/Neuton-Regular.ttf);
-    }
-    :root{
-      ----primary-color:#00525C;
-      ----primary-color-light:#296f79;
-      ----secondary-color:#02A9AB;
-      ----secondary-color-light:#73d9da;
-      ----text-white:#ffff;
-      ----text-black:#0f0f0f;
-    }
+    /* Global Styles */
     body {
-    
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      font-family: Arial, sans-serif;
-    }
-    .navbar {
-      transition: background-color 0.5s ease-in-out;
+      background-color: #f4f4f4;
     }
 
-    .navbar.transparent {
-      background-color: transparent;
+    .container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 20px;
     }
 
-    .navbar.scrolled {
-        backdrop-filter: blur(7px) saturate(163%);
-    -webkit-backdrop-filter: blur(7px) saturate(163%);
-    background-color: rgba(17, 25, 40, 0.33);
-    /* border-radius: 12px; */
-    border: 1px solid rgba(255, 255, 255, 0.125);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    .navbar.scrolled  .logo{
-  width: 60px;
-  height: 60px !important;
-}
-    .navbar.scrolled  a {
-      font-size: 20px !important;
-      letter-spacing: 2px;
-      font-family:primary-font !important;
-      
-    }
-.logo{
-  width: 85px;
-  height: 90px !important;
-  transition: all 1s ease-in-out;
-}
-   /* .navbar-brand img {
-      height: 20px;
-    }
-    .navbar-brand img {
-      height: 50px;
-    } */
-
-    .offcanvas {
-        backdrop-filter: blur(7px) saturate(163%);
-    -webkit-backdrop-filter: blur(7px) saturate(163%);
-    background-color: rgba(17, 25, 40, 0.33);
-    border: 1px solid rgba(255, 255, 255, 0.125);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.5s ease-in-out;
+    /* Section Styles */
+    .our-team {
+      background-color: #f4f4f4;
+      padding: 50px 0;
     }
 
-    .offcanvas-close {
-      
-      color: var(----text-white) !important;
-      font-size: 1.2rem;
-      padding: 5px 10px;
-      border-radius: 50%;
-      border: none;
+    .section-title {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
     }
 
-    .content {
-      /* padding-top: 80px; */
-      /* text-align: center; */
+    .swiper-container {
+      width: 100%;
+      max-width: 400px;
+      margin: 0 auto;
+      overflow: hidden;
     }
 
-    .content h1 {
-      color: #004080;
+    .swiper-slide img {
+      width: 100%;
+      max-width: 500px; /* Adjust maximum image width */
+      height: auto; /* Maintain aspect ratio */
+      object-fit: cover;
+      margin: 0 auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .content p {
-      font-size: 1.2rem;
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: #333;
+      font-size: 24px;
     }
 
-    /* Spacing for content sections */
-    section {
-      padding: 100px 0;
+    .swiper-pagination-bullet {
+      background: #333;
     }
 
-    /* Navbar customization */
-    .navbar-nav .nav-item a {
-      font-size: 22px;
-      letter-spacing: 2px;
-      font-family:primary-font !important;
-      color:var(----text-white) !important;
+    .swiper-pagination-bullet-active {
+      background: #02A9AB;
     }
 
-    .navbar-toggler{
-        border: none !important;
-    }
-    /* Change color of the navbar-toggler icon */
-    .fa-bars {
- 
-      color:var(----text-white) !important; /* Make the icon black */
-    }
+    @media (max-width: 768px) {
+      .swiper-container {
+        max-width: 300px;
 
-    /* Social media icons styling */
-    .social-media-icon {
-      display: flex;
-      gap: 15px;
-      align-items: center;
+       
+      }
+
+
     }
 
-    .social-media-icon i {
-      font-size: 1.5rem;
-      color: var(----text-white);
-      transition: color 0.3s ease-in-out;
-    }
-
-    .social-media-icon i:hover {
-      color: #004080;
-    }
-
-.active{
-  color: var(----primary-color);
-}
-
-    /* --------------------------- */
 
 
-    .ABOUT-section{
-/* background-image: url(/images/a-dark-cyan-background-with-a-smoke-overlay\ \(1\).png); */
-background-image: url(/images/smoke-black-add.png);
-background-size: cover;  
-/* background: #013333;   */
-}
-.navbar-brand{
-  border: none;
-}
-
-.karl-book {
-  width: 300px !important;
-}
-.karl-book img{
-  width: 300px !important;
-}
-
-.heading{
-  letter-spacing: 4px;
-  font-size: 40px !important;
-  font-family:primary-font !important;
-  color:var(----secondary-color) !important;
-}
-.Paragraph{
-  font-family:secondary-font;
-  letter-spacing: 1px;
-  line-height: 31px;
-}
-.button{
-  border: none !important;
-  background:var(----secondary-color);
-  height: 50px;
-  min-width: 170px !important;
-  border-radius: 5px;
-  transition: all 0.5s ease-in-out;
-}
-.button:hover{
-  border: none !important;
-  background:var(----secondary-color-light);
-  color: var(----text-black) !important;
- 
-}
+   
   </style>
 </head>
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark fixed-top transparent" id="navbar">
-    <div class="container ">
-      <a class="navbar-brand" href="#">
-        <img class="logo" src="/images/Karl Logo.png" alt="Logo">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
-        <i class="fa fa-bars"></i>
-      </button>
 
-      <div class="collapse navbar-collapse ">
-        <ul class="navbar-nav ms-auto gap-lg-4 gap-1">
-          <li class="nav-item active"><a class="nav-link" href="/auther-web.html">ABOUT KARL</a></li>
-        <li class="nav-item"><a class="nav-link" href="../Karolis_Vydmantas_web/test.html">THE BOOK</a></li>
-        <li class="nav-item"><a class="nav-link" href="#services">NEWS & EVENTS</a></li>
-          <li class="nav-item"><a class="nav-link" href="#PODCAST">PODCAST</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
+  <!-- Our Team Section -->
+  <section class="our-team container">
+    <h2 class="section-title">Responsive Slider</h2>
 
-        <!-- Social Media Icons -->
-        <div class="social-media-icon mx-5 gap-3">
-          <a target="_blank" href="https://www.facebook.com/Karol.Dexter.Vydmantas " class="social-icon"><i class="fab fa-facebook-f"></i></a>
-          <a target="_blank" href=" https://www.instagram.com/karl_weezy/" class="social-icon"><i class="fab fa-instagram"></i></a>
-          <a target="_blank" href="https://x.com/WhereIs_Karl" class="social-icon"><i class="fab fa-twitter"></i></a>
-          <a target="_blank" href="https://www.tiktok.com/@whereiskarl420" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
-          <a target="_blank" href="https://www.youtube.com/@WhereIsKarl" class="social-icon"><i class="fab fa-youtube"></i></a>
+    <!-- Swiper Container -->
+    <div class="swiper-container team-swiper-container">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide">
+          <img src="/images/Auther-img.png" alt="Karl Book 1">
+        </div>
+        <!-- Slide 2 -->
+        <div class="swiper-slide">
+          <img src="/images/Auther-img.png" alt="Karl Book 2">
+        </div>
+        <!-- Slide 3 -->
+        <div class="swiper-slide">
+          <img src="/images/Auther-img.png" alt="Karl Book 3">
+        </div>
+        <!-- Slide 4 -->
+        <div class="swiper-slide">
+          <img src="/images/Auther-img.png" alt="Karl Book 4">
         </div>
       </div>
+
+      <!-- Navigation Controls -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
     </div>
-  </nav>
+  </section>
 
-  <!-- Offcanvas Menu -->
-  <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
-    <div class="offcanvas-header">
-      <a class="navbar-brand" href="#">
-        <img class="logo" src="/images/Karl Logo.png" alt="Logo">
-      </a>
-      <button type="button" class="btn offcanvas-close mt-4 fs-2" data-bs-dismiss="offcanvas" aria-label="Close"> <i class="navbar-toggler-icon fa fa-close"></i></button>
-    </div>
-    <div class="offcanvas-body">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="/auther-web.html">ABOUT KARL</a></li>
-        <li class="nav-item"><a class="nav-link" href="../Karolis_Vydmantas_web/test.html">THE BOOK</a></li>
-        <li class="nav-item"><a class="nav-link" href="#news">NEWS & EVENTS</a></li>
-        <li class="nav-item"><a class="nav-link" href="#PODCAST">PODCAST</a></li>
-      </ul>
+  <!-- Swiper JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-      <div class="social-media-icon mt-3">
-        <a target="_blank" href="https://www.facebook.com/Karol.Dexter.Vydmantas " class="social-icon"><i class="fab fa-facebook-f"></i></a>
-        <a target="_blank" href=" https://www.instagram.com/karl_weezy/" class="social-icon"><i class="fab fa-instagram"></i></a>
-        <a target="_blank" href="https://x.com/WhereIs_Karl" class="social-icon"><i class="fab fa-twitter"></i></a>
-        <a target="_blank" href="https://www.tiktok.com/@whereiskarl420" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
-        <a target="_blank" href="https://www.youtube.com/@WhereIsKarl" class="social-icon"><i class="fab fa-youtube"></i></a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Content -->
-  <div class="content">
-    <section id="ABOUT" class=" ABOUT-section " >
-      
-<div class="about-karl container  mt-5 py-5 p-0 m-0 row d-flex justify-conntent-center  align-items-start">
-  <div class="col-lg-5  col-12 d-flex justify-content-center align-items-center">
-    <div class="karl-book">
-      <img src="/images/where is karl Book.png" alt="">
-    </div>
-  </div>
-  <div class="col-lg-7 col-12 d-flex gap-3 p-3 flex-column justify-content-center  align-items-center text-white">
-    <h3 class="heading">WHERE IS KARL?</h3>
-    <p class="Paragraph text-center">Dive into this captivating adventure of a fictional guy named "Karl" & follow along as he takes us back in time to wild nights out, Jail, falling in & out of love, great friends, a plethora of parties/festivals with a few psychedelic experiences sprinkled throughout. immerse yourself in a life filled with travel, music, drugs, deceit, death, love & so much more.</p>
-  <a href=""><button class="button text-white">BUY THE BOOK</button></a>
-  </div>
-</div>
-
-
-    </section>
-    <section id="about">
-      
-
-
-    </section>
-    <section id="services">
-      <h2>Services</h2>
-      <p>Details of services offered.</p>
-    </section>
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <p>Contact information goes here.</p>
-    </section>
-  </div>
-
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- JavaScript for Navbar Scroll Effect -->
   <script>
-    window.onscroll = function() { changeNavbarColor() };
-
-    var navbar = document.getElementById("navbar");
-
-    function changeNavbarColor() {
-      if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-        navbar.classList.add("scrolled");
-        navbar.classList.remove("transparent");
-      } else {
-        navbar.classList.remove("scrolled");
-        navbar.classList.add("transparent");
-      }
-    }
+    // Initialize Swiper
+    var swiper = new Swiper(".team-swiper-container", {
+      loop: true, // Enable looping
+      slidesPerView: 1, // Show one slide at a time
+      spaceBetween: 10, // Space between slides
+      breakpoints: {
+        480: {
+          slidesPerView: 1, // Single slide on smaller screens
+        },
+        768: {
+          slidesPerView: 1, // Single slide on medium screens
+        },
+        1024: {
+          slidesPerView: 1, // Single slide on large screens
+        }
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
   </script>
 </body>
 </html>
