@@ -217,6 +217,16 @@ background-size: cover;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
+.about-karl-more {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.about-karl-more.show {
+  display: block;
+  opacity: 1;
+}
+
 /* --------------------the-book------------------------- */
 
 .the-book {
@@ -547,7 +557,7 @@ blockquote footer {
         <!-- Social Media Icons -->
         <div class="social-media-icon mx-5 gap-3">
           <a target="_blank" href="https://www.facebook.com/people/Where-Is-Karl-the-Book/61568497810129/ " class="social-icon"><i class="fa-brands fa-facebook" style="color:#1877f2;"></i></a>
-          <a target="_blank" href=" https://www.instagram.com/karl_weezy/" class="social-icon  "><i class="fab fa-instagram text-dark" style=" padding:1.2px; border-radius:4px; background: #833ab4;
+          <a target="_blank" href="https://www.instagram.com/whereiskarl_/" class="social-icon  "><i class="fab fa-instagram text-dark" style=" padding:1.2px; border-radius:4px; background: #833ab4;
     background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);"></i></a>
           <a target="_blank" href="https://x.com/WhereIs_Karl" class="social-icon"><i class="fa-brands fa-x-twitter"style="color:#ffff;padding:1px; border-radius:4px; background:#000000;"></i></a>
           <a target="_blank" href="https://www.tiktok.com/@whereiskarl420" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
@@ -578,7 +588,7 @@ blockquote footer {
 
       <div class="social-media-icon mt-3">
         <a target="_blank" href="https://www.facebook.com/people/Where-Is-Karl-the-Book/61568497810129/ " class="social-icon"><i class="fa-brands fa-facebook" style="color:#1877f2;"></i></a>
-          <a target="_blank" href=" https://www.instagram.com/karl_weezy/" class="social-icon"><i class="fab fa-instagram text-dark" style="padding:1.5px; border-radius:4px; background: #833ab4;
+          <a target="_blank" href="https://www.instagram.com/whereiskarl_/" class="social-icon"><i class="fab fa-instagram text-dark" style="padding:1.5px; border-radius:4px; background: #833ab4;
     background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);"></i></a>
           <a target="_blank" href="https://x.com/WhereIs_Karl" class="social-icon"><i class="fa-brands fa-x-twitter"style="color:#ffff;padding:1px; border-radius:4px; background:#000000;"></i></a>
           <a target="_blank" href="https://www.tiktok.com/@whereiskarl420" class="social-icon"><i class="fa-brands fa-tiktok"></i></a>
@@ -599,7 +609,7 @@ blockquote footer {
   <div data-aos="zoon-out-left" class="col-lg-6 col-12 d-flex gap-3 p-3 flex-column   align-items-lg-start justify-content-center align-items-center  text-white">
     <h3 class="heading" data-aos="fade-up">WHERE IS KARL?</h3>
     <p data-aos="fade-up" class="Paragraph text-lg-start text-center">Dive into this captivating adventure of a fictional guy named "Karl" & follow along as he takes us back in time to wild nights out, Jail, falling in & out of love, great friends, a plethora of parties/festivals with a few psychedelic experiences sprinkled throughout. immerse yourself in a life filled with travel, music, drugs, deceit, death, love & so much more.</p>
-  <a data-aos="fade-up" target="_blank" href="/test.html"><button class="button text-dark">Buy The Book</button></a>
+  <a data-aos="fade-up" target="_blank" href="https://www.amazon.com/Where-Karl-Karolis-Vydmantas/dp/1545764190"><button class="button text-dark">Buy The Book</button></a>
   </div>
 </div>
 
@@ -620,8 +630,10 @@ blockquote footer {
         
         <div  data-aos="zoom-out" class="col-lg-6 col-12 d-flex gap-3 mt-lg-0 mt-4 flex-column   align-items-lg-start justify-content-center align-items-center  text-white">
           <h3 data-aos="fade-up" class="heading">I"am Karl</h3>
-          <p data-aos="fade-up" class="Paragraph text-lg-start text-center col-lg-10 col-12">Born in Lithuania and raised in Chicago, Karolis (aka Karl) works a variety of jobs, from construction company CEO to hemp farm owner to podcast host and now author.</p>
-        <a data-aos="fade-up" href=""><button class="button text-dark">LEARN MORE ABOUT KARL</button></a>
+          <p data-aos="fade-up" class="Paragraph text-lg-start text-center col-lg-10 col-12">Born in Lithuania and raised in Chicago, Karolis works a variety of jobs, from construction company CEO to hemp &amp; cannabis enthusiast to content creator and now author.</p>
+          <p data-aos="fade-up" class="Paragraph text-lg-start text-center col-lg-10 col-12">Karolis started writing while in the depths of addiction. While working his way out, he discovered his new passion and found the stories therapeutic. Today, Karolis spends his days building homes across the US, longboarding, and attending various concerts and music festivals.</p>
+          <p data-aos="fade-up" class="Paragraph text-lg-start text-center col-lg-10 col-12 about-karl-more">Karolis hopes his stories and podcast help spread awareness about drug safety and the deadly consequences of addiction. He has already started writing a sequel.</p>
+        <a data-aos="fade-up" href="#" onclick="event.preventDefault(); document.querySelector('.about-karl-more').classList.toggle('show'); this.querySelector('button').textContent = this.querySelector('button').textContent.includes('LEARN MORE') ? 'SHOW LESS' : 'LEARN MORE ABOUT KARL';"><button class="button text-dark">LEARN MORE ABOUT KARL</button></a>
         </div>
         
       </div>
@@ -737,12 +749,13 @@ blockquote footer {
       
       <div data-aos="fade-up" class="d-flex flex-column mt-3 col-12 p-1 justify-content-center align-items-center">
         <input 
+          id="subscribeEmail"
           type="email" 
           placeholder="*Enter Email Address" 
           class="p-3 col-lg-4 col-md-6 col-12 rounded border-0 mb-3"
           required
         />
-        <a href=""><button class="button text-dark bg-danger">Subscribe</button></a>
+        <a href="mailto:whereiskarl123@gmail.com?subject=Newsletter%20Subscription&body=Hello%2C%0A%0AI%20would%20like%20to%20subscribe%20to%20the%20newsletter.%0A%0AEmail%3A%20" id="subscribeLink"><button type="button" class="button text-dark bg-danger">Subscribe</button></a>
         
       </div></div>
       <!-- Footer -->
