@@ -206,6 +206,7 @@ background-size: cover;
   transition: all 0.5s ease-in-out;
   font-family:primary-font !important;
   letter-spacing: 4px;
+  padding: 0 20px;
   font-size: 20px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
@@ -267,74 +268,31 @@ background-size: cover;
 .swiper-button-next,
 .swiper-button-prev {
   color: #fff;
+  font-size: 20px !important;
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: rgba(2, 169, 171, 0.8);
-  display: flex !important;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
   align-items: center;
   justify-content: center;
   top: 50%;
   transform: translateY(-50%);
-  transition: all 0.3s ease-in-out;
-  border: none;
-  cursor: pointer;
-  font-size: 0 !important;
-}
-
-.swiper-button-next svg,
-.swiper-button-prev svg {
-  display: none !important;
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  content: "" !important;
-  font-size: 0;
-}
-
-.swiper-button-next::before {
-  content: "→";
-  font-size: 30px;
-  font-weight: bold;
-  letter-spacing: 0;
-}
-
-.swiper-button-prev::before {
-  content: "←";
-  font-size: 30px;
-  font-weight: bold;
-  letter-spacing: 0;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .swiper-button-next {
-  right: var(--swiper-navigation-sides-offset, 60px) !important;
-  left: auto;
+  right: 10px;
 }
 
 .swiper-button-prev {
-  left: var(--swiper-navigation-sides-offset, 60px) !important;
-  right: auto;
-}
-
-.swiper-rtl .swiper-button-next,
-.swiper-rtl ~ .swiper-button-next,
-.swiper-rtl ~ .swiper-button-prev {
-  left: var(--swiper-navigation-sides-offset, 40px);
-  right: auto;
-}
-
-.swiper-rtl .swiper-button-prev,
-.swiper-rtl ~ .swiper-button-prev,
-.swiper-rtl ~ .swiper-button-next {
-  left: auto;
-  right: var(--swiper-navigation-sides-offset, 40px);
+  left: 10px;
 }
 
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  background: rgba(2, 169, 171, 1);
-  transform: translateY(-50%) scale(1.1);
+  background: rgba(255, 255, 255, 0.8);
+  color: #333;
 }
 
 /* Pagination */
@@ -672,7 +630,7 @@ blockquote footer {
 
         
         <div  data-aos="zoom-out" class="col-lg-6 col-12 d-flex gap-3 mt-lg-0 mt-4 flex-column   align-items-lg-start justify-content-center align-items-center  text-white">
-          <h3 data-aos="fade-up" class="heading">I am Karl</h3>
+          <h3 data-aos="fade-up" class="heading">I"am Karl</h3>
           <p data-aos="fade-up" class="Paragraph text-lg-start text-center col-lg-10 col-12">Born in Lithuania and raised in Chicago, Karolis works a variety of jobs, from construction company CEO to hemp &amp; cannabis enthusiast to content creator and now author.</p>
           <p data-aos="fade-up" class="Paragraph text-lg-start text-center col-lg-10 col-12">Karolis started writing while in the depths of addiction. While working his way out, he discovered his new passion and found the stories therapeutic. Today, Karolis spends his days building homes across the US, longboarding, and attending various concerts and music festivals.</p>
           <p data-aos="fade-up" class="Paragraph text-lg-start text-center col-lg-10 col-12 about-karl-more">Karolis hopes his stories and podcast help spread awareness about drug safety and the deadly consequences of addiction. He has already started writing a sequel.</p>
@@ -710,66 +668,46 @@ blockquote footer {
       </div>
     </section>
 
-    <section id="podcast" class="  podcast d-flex flex-column justify-conntent-center align-items-center" >
-      
-      <h3 data-aos="fade-up" class="heading text-center mb-5 text-white">PODCAST</h3>
-
-      <div class="about-karl container    mt-5    p-0 m-0 row d-flex justify-conntent-center  align-items-start">
-        <div data-aos="zoom-out" class="  col-lg-6  col-12 d-flex flex-column justify-content-center align-items-center">
-          <div data-aos="fade-up" class="karl-book">
-            <img src="/images/where is karl Book.png" alt="">
-          </div>
-          <a data-aos="fade-up" href=""><button class="button text-dark PaperBook">PaperBook</button></a>
-       
-        </div>
-        <div data-aos="zoom-out" class="col-lg-6 mt-lg-0 mt-5 col-12 d-flex flex-column justify-content-center align-items-center">
-          <div data-aos="fade-up" class="karl-book">
-            <img src="/images/ebook 1.png" alt="">
-          </div>
-          <a data-aos="fade-up" target="_blank" href=""><button class="button text-dark PaperBook mt-3">eBook</button></a>
-       
-        </div>
-
-      
-    </section>
-    
     <section id="testimonial-slider" class="  d-flex flex-column justify-content-center align-items-center  text-white p-lg-5 p-0">
       <h3 data-aos="fade-up" class="heading text-center mb-5 text-white">Reviews</h3>
       <div class="slider-container position-relative">
         <!-- Slides Wrapper -->
         <div data-aos="zoom-out" class="slides-wrapper">
-          <!-- Slide 1 -->
+          <!-- Review 1 -->
           <div class="slide text-center">
             <blockquote class="blockquote d-flex flex-column justify-content-center align-items-center">
-              <p class="Paragraph  text-center col-lg-10 col-12 p-lg-4 p-0">
-                "Bill’s passion for innovation and teamwork was a gift to Apple and the world.
-                <strong>Trillion Dollar Coach</strong> has captured his tireless spirit so future generations
-                can learn from one of our industry’s greatest leaders."
+              <p class="Paragraph text-center col-lg-10 col-12 p-lg-4 p-0">
+                "Where Is Karl? is unique and well written. It perfectly explains in detail the struggles,
+                the consequences, and the dangers of drug addiction or getting involved in drugs...To me,
+                this book is quite effective in spreading awareness about drug safety. Great work!"
               </p>
               <footer class="blockquote-footer text-white">
-                <cite>Tim Cook | CEO, Apple</cite>
+                <cite>Readers' Favorite</cite>
               </footer>
             </blockquote>
           </div>
-          <!-- Slide 2 -->
+
+          <!-- Review 2 -->
           <div class="slide text-center">
             <blockquote class="blockquote d-flex flex-column justify-content-center align-items-center">
-              <p class="Paragraph  text-center col-lg-10 col-12 p-lg-4 p-0">
-                "This book provides invaluable insights into leadership and innovation in the tech world."
+              <p class="Paragraph text-center col-lg-10 col-12 p-lg-4 p-0">
+                "Inspirational"
               </p>
               <footer class="blockquote-footer text-white">
-                <cite>Sundar Pichai | CEO, Google</cite>
+                <cite>Catherine</cite>
               </footer>
             </blockquote>
           </div>
-          <!-- Slide 2 -->
+
+          <!-- Review 3 -->
           <div class="slide text-center">
             <blockquote class="blockquote d-flex flex-column justify-content-center align-items-center">
-              <p class="Paragraph  text-center col-lg-10 col-12 p-lg-4 p-0">
-                "This book Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis ratione veniam quisquam quo blanditiis ipsa ut esse itaque. Vero neque laboriosam, illum minus necessitatibus molestias cupiditate voluptates quia nemo voluptatibus? provides invaluable insights into leadership and innovation in the tech world."
+              <p class="Paragraph text-center col-lg-10 col-12 p-lg-4 p-0">
+                "This short book has an almost surreal quality to it, feeling at times like an acid trip
+                brought to life through the pages."
               </p>
               <footer class="blockquote-footer text-white">
-                <cite>Sundar Pichai | CEO, Google</cite>
+                <cite>Raisa M.</cite>
               </footer>
             </blockquote>
           </div>
@@ -780,6 +718,46 @@ blockquote footer {
         <button class="slider-button next ">&rarr;</button>
       </div>
       <div class="pagination-container"></div>
+    </section>
+
+    <section id="podcast" class="  podcast d-flex flex-column justify-conntent-center align-items-center" >
+      
+      <h3 data-aos="fade-up" class="heading text-center mb-5 text-white">BUY THE BOOK</h3>
+
+      <div class="about-karl container    mt-5    p-0 m-0 row d-flex justify-conntent-center  align-items-start">
+        <div data-aos="zoom-out" class="  col-lg-6  col-12 d-flex flex-column justify-content-center align-items-center">
+          <div data-aos="fade-up" class="karl-book">
+            <img src="/images/where is karl Book.png" alt="">
+          </div>
+          <a data-aos="fade-up" href=""><button class="button text-dark PaperBook">Paperback</button></a>
+       
+        </div>
+        <div data-aos="zoom-out" class="col-lg-6 mt-lg-0 mt-5 col-12 d-flex flex-column justify-content-center align-items-center">
+          <div data-aos="fade-up" class="karl-book">
+            <img src="/images/ebook 1.png" alt="">
+          </div>
+          <a data-aos="fade-up" target="_blank" href=""><button class="button text-dark PaperBook mt-3">eBook</button></a>
+       
+        </div>
+      </div>
+
+      <div data-aos="fade-up" class="container d-flex flex-column align-items-center text-white mt-5">
+        <h4 class="heading text-center mb-3">JOIN THE WAITLIST</h4>
+        <p class="Paragraph text-center col-lg-7 col-12">Be the first to hear when the podcast launches and get early updates.</p>
+        <form class="row g-3 justify-content-center col-lg-8 col-12" action="mailto:whereiskarl123@gmail.com" method="post" enctype="text/plain">
+          <div class="col-md-5">
+            <label for="podcastFirstName" class="visually-hidden">First name</label>
+            <input id="podcastFirstName" name="firstName" type="text" class="form-control p-3" placeholder="First name" autocomplete="given-name" required>
+          </div>
+          <div class="col-md-5">
+            <label for="podcastEmail" class="visually-hidden">Email address</label>
+            <input id="podcastEmail" name="email" type="email" class="form-control p-3" placeholder="Email address" autocomplete="email" required>
+          </div>
+          <div class="col-12 text-center">
+            <button type="submit" class="button text-dark">JOIN THE WAITLIST</button>
+          </div>
+        </form>
+      </div>
     </section>
     
     <section id="Subscribe" class="  Subscribe  d-flex flex-column justify-content-between  align-items-center  text-white">
