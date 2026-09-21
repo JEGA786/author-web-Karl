@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sticky Navbar with Scroll Effect</title>
+  <title>Karolis Vydmantas</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome for social media icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" /><link rel="stylesheet" href="/fonts/STONEHARBOUR-Italic.otf">
@@ -161,7 +161,9 @@
     .social-media-icon i:hover {
      transform: scale(1.09);
     }
-
+.swiper-navigation-icon{
+  display: none;
+}
 
 
     /* --------------------------- */
@@ -249,19 +251,50 @@ background-size: cover;
 
 .swiper-container {
   width: 100%;
-  max-width: 300px; /* Adjust to fit your layout */
+  /* max-width: 480px; */
   margin: 0 auto;
   overflow: hidden;
-  /* position: relative; */
+  position: relative;
+  padding: 10px 46px 30px;
+}
+
+.swiper-wrapper {
+  align-items: center;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 18px;
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.9s ease, filter 0.9s ease;
+  opacity: 0.55;
+  transform: scale(0.9) translateY(10px);
+  filter: blur(0.5px);
+}
+
+.swiper-slide-active {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+  filter: blur(0);
 }
 
 .swiper-slide img {
-  width: 300px;
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover;
-  /* display: block; */
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 18px;
+  transition: transform 0.9s ease, filter 0.9s ease;
+  filter: saturate(1.05);
+  border-radius: 10px !important;
+}
+
+.swiper-slide-active img {
+  transform: scale(1.03);
 }
 
 /* Navigation Buttons */
@@ -269,16 +302,17 @@ background-size: cover;
 .swiper-button-prev {
   color: #fff;
   font-size: 20px !important;
-  width: 60px;
-  height: 60px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(2, 169, 171, 0.88);
   display: flex;
   align-items: center;
   justify-content: center;
   top: 50%;
   transform: translateY(-50%);
-  transition: background-color 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .swiper-button-next {
@@ -289,24 +323,44 @@ background-size: cover;
   left: 10px;
 }
 
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: none !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  font-size: 26px !important;
+  line-height: 1;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: none;
+  overflow: visible;
+}
+
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  background: rgba(255, 255, 255, 0.8);
-  color: #333;
+  background: rgba(255, 255, 255, 0.9);
+  color: #0c2f35;
+  transform: translateY(-50%) scale(1.06);
 }
 
 /* Pagination */
 .swiper-pagination {
-  bottom: 10px !important;
+  bottom: 0px !important;
 }
 
 .swiper-pagination-bullet {
-  background: #a1a0a0;
+  background: rgba(255, 255, 255, 0.55);
   opacity: 1;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
 }
 
 .swiper-pagination-bullet-active {
   background: #02A9AB;
+  transform: scale(1.2);
 }
 
 /* Media Queries for Responsiveness */
@@ -649,20 +703,20 @@ blockquote footer {
           <div data-aos="zoom-out" class="swiper-wrapper d-flex justify-conntent-center align-items-center">
             <!-- Slide 1 -->
             <div  class="swiper-slide d-flex justify-conntent-center align-items-center">
-              <img src="/images/news.png" alt="News 1">
+              <img src="/images/Karls_news.jpg" alt="News 1">
             </div>
             <!-- Slide 2 -->
             <div class="swiper-slide">
-              <img src="/images/news.png" alt="News 2">
+              <img src="/images/Karls_news2.jpg" alt="News 2">
             </div>
             <!-- Slide 3 -->
             <div class="swiper-slide">
-              <img src="/images/news.png" alt="News 3">
+              <img src="/images/Karls_news3.jpg" alt="News 3">
             </div>
           </div>
           <!-- Swiper Controls -->
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next" aria-label="Next slide">→</div>
+          <div class="swiper-button-prev" aria-label="Previous slide">←</div>
           <div class="swiper-pagination mb-5 m-0 p-0"></div>
         </div>
       </div>
@@ -872,22 +926,18 @@ prevButton.addEventListener('click', () => {
 </script>
 
   <script>
-    // Initialize Swiper
+    // Initialize News & Events Swiper
     var swiper = new Swiper(".team-swiper-container", {
-      loop: true, // Enable looping
-      slidesPerView: 1, // Show one slide at a time
-      spaceBetween: 10, // Space between slides
-      breakpoints: {
-        480: {
-          slidesPerView: 1, // Single slide on smaller screens
-        },
-        768: {
-          slidesPerView: 1, // Single slide on medium screens
-        },
-        1024: {
-          slidesPerView: 1, // Single slide on large screens
-        }
+      loop: true,
+      speed: 1100,
+      slidesPerView: 1,
+      spaceBetween: 0,
+      centeredSlides: true,
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
       },
+      grabCursor: true,
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
@@ -896,6 +946,14 @@ prevButton.addEventListener('click', () => {
         el: ".swiper-pagination",
         clickable: true,
       },
+      effect: "slide",
+      on: {
+        init: function () {
+          this.slides.forEach((slide) => {
+            slide.style.transition = 'transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.9s ease';
+          });
+        }
+      }
     });
   </script>
 
